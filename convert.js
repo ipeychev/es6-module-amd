@@ -39,8 +39,6 @@ recast.visit(ast, {
         if (path.value.default) {
             addExportStatement(path, 'default', path.value.declaration.name);
 
-            path.replace(builders.emptyStatement());
-
         } else {
             path.value.specifiers.forEach(function(specifier) {
                 var specifierName;
@@ -54,9 +52,9 @@ recast.visit(ast, {
 
                 addExportStatement(path, specifierName, specifierId);
             });
-
-            path.replace(builders.emptyStatement());
         }
+
+        path.replace(builders.emptyStatement());
 
         this.traverse(path);
     }
