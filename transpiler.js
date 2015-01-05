@@ -47,8 +47,6 @@ Transpiler.prototype = {
             }
         });
 
-        debugger;
-
         var moduleName = file.substring(this._config.root.length + 1);
 
         ast.program.body = [builders.expressionStatement(builders.callExpression(builders.identifier('define'), [

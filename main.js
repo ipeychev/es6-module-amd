@@ -32,13 +32,11 @@ var options = {
 };
 
 function onWalkerFile(root, fileStats, next) {
-    debugger;
     var file = path.join(root, fileStats.name);
 
     var fileExt = file.substr(file.lastIndexOf('.') + 1);
 
     if (program.extensions.indexOf(fileExt.toLowerCase()) >= 0) {
-        debugger;
 
         var outputFile = path.join(program.output, file.substring(program.root.length + 1));
 
