@@ -1,8 +1,10 @@
-var jquery = {
-	log: function(text) {
-		console.log(text);
-	}
-};
+define("module2.js", ["exports"], function(__exports__) {
+    var jquery = {
+        log: function(text) {
+            console.log(text);
+        }
+    };
 
 
-export {jquery};
+    __exports__["jquery"] = jquery;
+});

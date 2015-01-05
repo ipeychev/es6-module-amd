@@ -9,6 +9,8 @@
   "author": "Ilyan Peychev",
   "license": "BSD",
   "devDependencies": {
-    "recast": "^0.9.11"
+    "commander": "^2.6.0",
+    "recast": "^0.9.11",
+    "walk": "^2.3.4"
   }
 }

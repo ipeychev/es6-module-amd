@@ -1,20 +1,26 @@
-/* import {a as foo} from 'module2.js'; */
+define(
+    "test.js",
+    ["files/module2.js", "https://code.jquery.com/jquery-2.1.3.min.js", "files/module3.js", "exports"],
+    function(
+        $files$module2$js$,
+        $https$$$code$jquery$com$jquery$2$1$3$min$js$,
+        $files$module3$js$,
+        __exports__) {
+        var foo3 = $files$module2$js$;
+        var foo2 = $files$module3$js$["d"];
+        var jquery = $https$$$code$jquery$com$jquery$2$1$3$min$js$["jquery"];
+        var b = $files$module2$js$["b"];
+        var a = $files$module2$js$["a"];
 
-import {b as foo} from 'module2.js';
-import {c as foo2} from 'module2.js';
-import * as foo3 from 'module2.js';
+        var e = 10,
+            f = 20;
 
-(function() {
-}());
+        function c () {
+            return 30;
+        }
 
-
-var a = 10,
-    b = 20;
-
-function c () {
-    return 30;
-}
-
-export { a, b, c as z };
-
-export default c;
+        __exports__["e"] = e;
+        __exports__["z"] = f;
+        __exports__["default"] = c;
+    }
+);
