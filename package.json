@@ -1,36 +1,43 @@
 {
-    "name": "es6m2amd",
-    "version": "1.0.0",
-    "description": "ECMAScript 6 module to AMD converter",
-    "main": "test.js",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:ipeychev/es6-module-amd.git"
-    },
-    "bugs": {
-        "url": "https://github.com/ipeychev/es6-module-amd/issues"
-    },
-    "bin": {
-        "m2amd": "bin/m2amd"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": {
-        "name": "Iliyan Peychev",
-        "email": "iliyan.peychev@gmail.com"
-    },
-    "keywords": [
-        "ecmascript", "amd", "module"
-    ],
-    "license": "LGPL",
-    "dependencies": {
-        "commander": "^2.6.0",
-        "recast": "^0.9.11",
-        "walk": "^2.3.4"
-    },
-    "engines": {
-        "node": ">=0.10"
-    },
-    "preferGlobal": "true"
+  "name": "es6m2amd",
+  "version": "1.0.0",
+  "description": "ECMAScript 6 module to AMD converter",
+  "main": "test.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ipeychev/es6-module-amd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ipeychev/es6-module-amd/issues"
+  },
+  "bin": {
+    "m2amd": "bin/m2amd"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Iliyan Peychev",
+    "email": "iliyan.peychev@gmail.com"
+  },
+  "keywords": [
+    "ecmascript",
+    "amd",
+    "module"
+  ],
+  "license": "LGPL",
+  "dependencies": {
+    "commander": "^2.6.0",
+    "recast": "^0.9.11",
+    "walk": "^2.3.4"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "preferGlobal": "true",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jsdoc": "^0.1.4",
+    "require-dir": "^0.1.0"
+  }
 }
