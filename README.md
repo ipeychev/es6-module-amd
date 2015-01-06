@@ -3,6 +3,12 @@ ECMAScript6 module to AMD converter
 
 Converts ECMAScript 6 modules to AMD.
 
+Install
+==================
+```
+$ [sudo] npm install -g m2amd
+```
+
 Usage
 ==================
 
