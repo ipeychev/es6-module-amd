@@ -1,5 +1,5 @@
 {
-    "name": "m2amd",
+    "name": "es6m2amd",
     "version": "1.0.0",
     "description": "ECMAScript 6 module to AMD converter",
     "main": "test.js",
