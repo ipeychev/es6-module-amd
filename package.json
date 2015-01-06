@@ -1,16 +1,36 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "ECMAScript 6 module to AMD converter",
-  "main": "test.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Ilyan Peychev",
-  "license": "BSD",
-  "devDependencies": {
-    "commander": "^2.6.0",
-    "recast": "^0.9.11",
-    "walk": "^2.3.4"
-  }
+    "name": "m2amd",
+    "version": "1.0.0",
+    "description": "ECMAScript 6 module to AMD converter",
+    "main": "test.js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ipeychev/es6-module-amd.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ipeychev/es6-module-amd/issues"
+    },
+    "bin": {
+        "m2amd": "bin/m2amd"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "Iliyan Peychev",
+        "email": "iliyan.peychev@gmail.com"
+    },
+    "keywords": [
+        "ecmascript", "amd", "module"
+    ],
+    "license": "LGPL",
+    "dependencies": {
+        "commander": "^2.6.0",
+        "recast": "^0.9.11",
+        "walk": "^2.3.4"
+    },
+    "engines": {
+        "node": ">=0.10"
+    },
+    "preferGlobal": "true"
 }
