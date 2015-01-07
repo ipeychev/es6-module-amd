@@ -13,7 +13,7 @@ Usage
 ==================
 
 ```
-$ m2amd.js -o out examples
+$ m2amd -o out examples
 ```
 
 Where "examples" is the directory which will be scanned for files and "out" is the folder, in which the processed files will be stored.
@@ -21,7 +21,7 @@ Where "examples" is the directory which will be scanned for files and "out" is t
 You can include only some of the files in a directory by specifying file pattern via "-i" option, like this:
 
 ```
-$ m2amd.js -o out -i "**/module.js" examples
+$ m2amd -o out -i "**/module.js" examples
 ```
 
 In this case only file, called "module.js" in whatever sub-directory of "examples" folder will be processed.

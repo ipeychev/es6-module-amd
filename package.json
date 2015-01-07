@@ -1,6 +1,6 @@
 {
   "name": "es6m2amd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ECMAScript 6 module to AMD converter",
   "main": "test.js",
   "repository": {
@@ -11,7 +11,7 @@
     "url": "https://github.com/ipeychev/es6-module-amd/issues"
   },
   "bin": {
-    "m2amd": "bin/m2amd"
+    "m2amd": "bin/m2amd.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
