@@ -13,23 +13,32 @@ Usage
 ==================
 
 ```
-$ m2amd -r examples -o out
+$ m2amd.js -o out examples
 ```
 
-Where "examples" is the directory which will be scanned for files and "out" is the folder, in which the processed files will be stored. Look for more information in the rest of the options:
+Where "examples" is the directory which will be scanned for files and "out" is the folder, in which the processed files will be stored.
+
+You can include only some of the files in a directory by specifying file pattern via "-i" option, like this:
+
+```
+$ m2amd.js -o out -i "**/module.js" examples
+```
+
+In this case only file, called "module.js" in whatever sub-directory of "examples" folder will be processed.
+
+Look for more information in the rest of the options:
 
 ```
 $ m2amd --help
 
-  Usage: m2amd [options] <file ...>
+  Usage: m2amd [options] <folder ...>
 
   Options:
 
-    -h, --help                          output usage information
-    -r, --root [root folder]            The root folder, from which we should start looking for files. Default: current directory
-    -o, --output [output folder]        Output file to store the generated AMD module. Default: current directory
-    -e, --extensions [file extensions]  Only files which extensions match these in the list will be processed. Default: "js"
-    -V, --version                       output the version number
+    -h, --help                     output usage information
+    -o, --output [output folder]   output folder to store the generated AMD module. Default: current directory
+    -i, --include [file patterns]  file patterns to process. Default: "**/*.js"
+    -V, --version                  output the version number
 ```
 
 ### License
