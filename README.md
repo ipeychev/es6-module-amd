@@ -6,7 +6,7 @@ Converts ECMAScript 6 modules to AMD.
 Install
 ==================
 ```
-$ [sudo] npm install -g m2amd
+$ [sudo] npm install -g es6m2amd
 ```
 
 Usage
