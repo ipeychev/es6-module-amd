@@ -1,6 +1,6 @@
 {
   "name": "es6m2amd",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ECMAScript 6 module to AMD converter",
   "main": "test.js",
   "repository": {
