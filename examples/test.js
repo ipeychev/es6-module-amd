@@ -9,6 +9,22 @@ function c () {
     return 30;
 }
 
+let empty = () => {};
+
+(() => "foobar")() // returns "foobar"
+
+var simple = a => a > 15 ? 15 : a;
+simple(16); // 15
+simple(10); // 10
+
+var complex = (a, b) => {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
 export { e, f as z };
 
 export default c;
