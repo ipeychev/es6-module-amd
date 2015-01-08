@@ -1,6 +1,6 @@
 {
   "name": "es6m2amd",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ECMAScript 6 module to AMD converter",
   "main": "test.js",
   "repository": {
@@ -21,9 +21,11 @@
     "email": "iliyan.peychev@gmail.com"
   },
   "keywords": [
-    "ecmascript",
+    "es6",
+    "module",
+    "transpiler",
     "amd",
-    "module"
+    "module-formatter"
   ],
   "license": "LGPL",
   "dependencies": {
