@@ -3,11 +3,13 @@ ECMAScript6 module to AMD converter
 
 Converts ECMAScript 6 modules to AMD.
 
+
 Install
 ==================
 ```
 $ [sudo] npm install -g es6m2amd
 ```
+
 
 Usage
 ==================
@@ -43,3 +45,5 @@ $ m2amd --help
 
 ### License
 [LGPL License](LICENSE.md)
+
+[![Build Status](https://travis-ci.org/ipeychev/es6-module-amd.svg)](https://travis-ci.org/ipeychev/es6-module-amd)
