@@ -199,7 +199,7 @@
     <h1>Code coverage report for <span class="entity">lib/transpiler.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">100% <small>(60 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(62 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
         Branches: <span class="metric">100% <small>(10 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,7 +208,7 @@
         Functions: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">100% <small>(60 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(62 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -471,18 +471,17 @@
 253
 254
 255
-256</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+256
+257
+258
+259
+260
+261
+262
+263</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -492,6 +491,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -506,10 +514,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -729,6 +743,7 @@
 <span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
 var fs = require('fs');
+var path = require('path');
 var recast = require('recast');
 &nbsp;
 var builders = recast.types.builders;
@@ -748,14 +763,18 @@ Transpiler.prototype = {
      *
      * @param {string} root The root of the transpiled file.
      * @param {string} file The file which should be transpiled.
-     * @return {string} The converted to AMD content of the file.
+     * @return {object} The converted to AMD file and the generated source map.
      */
     transpile: function(root, file) {
         this._importDeclarations = [];
 &nbsp;
         var content = fs.readFileSync(file);
 &nbsp;
-        var ast = recast.parse(content);
+        var fileName = path.basename(file);
+&nbsp;
+        var ast = recast.parse(content, {
+            sourceFileName: fileName
+        });
 &nbsp;
         recast.visit(ast, {
             visitExportDeclaration: this._visitExportDeclaration.bind(this),
@@ -764,11 +783,13 @@ Transpiler.prototype = {
 &nbsp;
         ast = this._wrapModule(ast, root, file);
 &nbsp;
-        var output = recast.print(ast).code;
+        var result = recast.print(ast, {
+            sourceMapName: fileName
+        });
 &nbsp;
         this._importDeclarations.length = 0;
 &nbsp;
-        return output;
+        return result;
     },
 &nbsp;
     /**
@@ -986,7 +1007,7 @@ module.exports = Transpiler;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jan 08 2015 10:33:02 GMT+0100 (CET)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jan 27 2015 16:53:49 GMT+0100 (CET)</div>
 </div>
 
 <script src="../prettify.js"></script>
