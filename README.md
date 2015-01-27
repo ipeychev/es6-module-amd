@@ -28,6 +28,8 @@ $ m2amd -o out -i "**/module.js" examples
 
 In this case only file, called "module.js" in whatever sub-directory of "examples" folder will be processed.
 
+Source maps will be generated if you run the program with `-m` option.
+
 Look for more information in the rest of the options:
 
 ```
@@ -40,6 +42,7 @@ $ m2amd --help
     -h, --help                     output usage information
     -o, --output [output folder]   output folder to store the generated AMD module. Default: current directory
     -i, --include [file patterns]  file patterns to process. Default: "**/*.js"
+    -m, --map [source map]         Generate source map
     -V, --version                  output the version number
 ```
 
