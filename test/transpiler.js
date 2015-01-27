@@ -19,7 +19,7 @@ describe('Transpiler', function () {
 
         var expected = fs.readFileSync('test/expected/import.js', 'utf8');
 
-        assert.strictEqual(expected, output);
+        assert.strictEqual(expected, output.code);
     });
 
     it('should load a module with exports', function () {
@@ -29,7 +29,7 @@ describe('Transpiler', function () {
 
         var expected = fs.readFileSync('test/expected/export.js', 'utf8');
 
-        assert.strictEqual(expected, output);
+        assert.strictEqual(expected, output.code);
     });
 
     it('should load a module with both imports and exports', function () {
@@ -39,6 +39,6 @@ describe('Transpiler', function () {
 
         var expected = fs.readFileSync('test/expected/import-export.js', 'utf8');
 
-        assert.strictEqual(expected, output);
+        assert.strictEqual(expected, output.code);
     });
 });
